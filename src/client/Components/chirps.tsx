@@ -22,6 +22,7 @@ const Chirps: React.FC<blankProps> = props => {
             return obj[element]
         })
 
+
         let cards: JSX.Element[] = arr.map((element, index) => {
             let newIndex = index + 1;
             return (
@@ -30,7 +31,7 @@ const Chirps: React.FC<blankProps> = props => {
                         <h5 className="card-title px-1 py-1 col-sm-4">{element.name} says...</h5>
                         <p className="card-text">{element.text}</p>
                     </div>
-                    <Link to={`/admin/${newIndex}`}
+                    <Link to={`/admin/${element.id}`}
                         className="btn btn-warning col-sm-3 ml-auto">Admin Settings</Link>
                 </div>
             )
